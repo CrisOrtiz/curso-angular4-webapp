@@ -1,6 +1,6 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
-  "version": 1, 
+  "version": 1,
   "newProjectRoot": "projects",
   "projects": {
     "curso-angular4-webapp": {
@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "curso-angular4-webapp"
+    }
+  },
+  "defaultProject": "curso-angular4-webapp",
+  "cli": {
+    "analytics": "4d757b50-de41-42e5-be99-abde53e5afda"
+  }
 }
