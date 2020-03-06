@@ -1,17 +1,31 @@
-<div id="content" class="col-lg-10 col-lg-offset-2">
-  <header id="header">
+<div id="content" class="col-lg-10 col-lg-offset-1">
+
+  <header id="header" class="col-lg-12" [style.background]="header_color">
     <h1>
       {{title}}
     </h1>
   </header>
-  <nav id="nav">
+
+  <div class="clearfix"></div>
+
+  <nav id="nav" class="col-lg-12">
     <ul>
-      <li><a href="#">HOME</a></li>
-      <li><a href="#">Productos</a></li>
-      <li><a href="#">Crear Producto</a></li>
+      <li><a [routerLink]="['/inicio']" [routerLinkActive]="['activado']" >Inicio</a></li>
+      <li><a [routerLink]="['/productos']" [routerLinkActive]="['activado']" >Productos</a></li>
+      <li><a [routerLink]="['/crear-producto']" [routerLinkActive]="['activado']" >Crear Producto</a></li>
+      <div style="clear:both;"></div>
     </ul>
   </nav>
-  <section id="main">
+
+  <div class="clearfix"></div>
+
+  <section id="main" class="col-lg-12">
     <!-- Componente Actual-->
+    <router-outlet></router-outlet>
+    
   </section>
+
+  <footer id ="footer" class="col-lg-12">
+    <p>Curso de Angular 4 - Cristhian Ortiz Mercado</p>
+  </footer>
 </div>
