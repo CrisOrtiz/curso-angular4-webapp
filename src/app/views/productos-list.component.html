@@ -4,14 +4,33 @@
 <hr>
 
 <div *ngIf="!productos">
-Cargando listado de productos...
+    Cargando listado de productos...
 </div>
 
 <div *ngIf="productos" class="list-group">
-    <ul>
-        <li ng *ngFor="let producto of productos" class="list-group-item">
-            <strong>{{producto.nombre}}</strong>
-            <p>{{producto.precio}} Bs.</p>
-        </li>
-    </ul>
+    <div class=row>
+        <div ng *ngFor="let producto of productos" class="col-lg-3">
+            <div class="thumbnail" id="producto_container">
+                <div *ngIf="producto.imagen" class="image_container">
+                    <img src="http://localhost/curso-angular4-backend//uploads/{{producto.imagen}}"
+                    class="producto_imagen"    
+                    style="width:100%;" />
+                </div>
+                <div *ngIf="!producto.imagen" >
+                   <div class="imagen_relleno"><img src="../../assets/img-default.jpg"
+                    class="producto_imagen"    
+                    style="width:100%;" /></div>
+                </div>
+                <div class="caption" >
+                    <h3>{{producto.nombre}}</h3>
+                    <p>{{producto.precio}} Bs.</p>
+                    <p>
+                        <a [routerLink]="['/producto',producto.id]" class="btn btn-md btn-primary">Ver</a>
+                        <a href="#" class="btn btn-md btn-warning">Editar</a>
+                        <a href="#" class="btn btn-md btn-danger">Borrar</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

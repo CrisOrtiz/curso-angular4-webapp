@@ -82,3 +82,31 @@
 #form-producto label{
 	margin-top: 10px;
 }
+
+.producto_imagen{
+	max-height: 200px;
+	margin: 0px auto;
+	display:block;
+	width: auto;
+	max-width: 250px;
+	border-radius: 10px;
+	padding-top: 5px;
+}
+
+.imagen_relleno{
+	max-height: 200px;
+	margin: 0px auto;
+	display:block;
+	width: auto;
+	max-width: 250px;
+	border-radius: 10px;
+}
+
+.imagen_container{
+	width: 100%;
+	overflow: hidden;
+}
+
+#producto_container{
+	text-align: center;
+}

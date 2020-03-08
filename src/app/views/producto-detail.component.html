@@ -1,0 +1,22 @@
+<div *ngIf="!producto">
+    <p>cargando producto..</p>
+    <a [routerLink]="['/productos']" class="btn btn-md btn-primary">Volver</a>
+</div>
+
+<div *ngIf="producto">
+
+    <div class="col-lg-2" *ngIf="!producto.imagen"><br>
+        <img src="../../assets/img-default.jpg" class="producto_imagen" style="width:100%;" />
+    </div>
+
+    <div class="col-lg-2" *ngIf="producto.imagen">
+        <img src="http://localhost/curso-angular4-backend//uploads/{{producto.imagen}}" class="producto_imagen"
+            style="width:100%;" />
+    </div>
+    <div class="col-lg-8">
+        <h3>{{producto.nombre}}</h3>
+        <p><Strong>{{producto.precio}}</Strong></p>
+        <p>{{producto.descripcion}}</p>
+        <a [routerLink]="['/productos']" class="btn btn-md btn-primary">Volver</a>
+    </div>
+</div>

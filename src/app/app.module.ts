@@ -12,6 +12,7 @@ import { InicioComponent } from './components/inicio.component';
 import { ErrorComponent } from './components/error.component';
 import {ProductosListComponent} from './components/productos-list.component';
 import { ProductoAddComponent } from './components/producto-add.component';
+import { ProductoDetailComponent } from './components/producto-detail.component';
 
 //rutas
 import { routing,appRoutingProviders } from './app.routing';
@@ -23,7 +24,8 @@ import { routing,appRoutingProviders } from './app.routing';
     InicioComponent,
     ErrorComponent,
     ProductosListComponent,
-    ProductoAddComponent
+    ProductoAddComponent,
+    ProductoDetailComponent
   ],
   imports: [
     BrowserModule,
