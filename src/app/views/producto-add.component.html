@@ -1,26 +1,55 @@
 <h3>{{titulo}}</h3>
 <hr>
 
-<form #formProducto="ngForm" (ngSubmit)="onSubmit()" class="col-lg-6" id="form-producto" >
+<form #formProducto="ngForm" (ngSubmit)="onSubmit()" class="md-form" id="form-producto">
     <label>Nombre:
         <span *ngIf="!nombre.valid && nombre.touched" class="label label-warning">El nombre es obligatorio</span>
     </label>
-    <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="producto.nombre" class="form-control" required/>
-    
+    <input type="text" #nombre="ngModel" name="nombre" [(ngModel)]="producto.nombre" class="form-control" required />
+
 
     <label>Descripcion:
-        <span *ngIf="!descripcion.valid && descripcion.touched" class="label label-warning">La descripcion es obligatorio</span>
+        <span *ngIf="!descripcion.valid && descripcion.touched" class="label label-warning">La descripcion es
+            obligatorio</span>
     </label>
-    <textarea type="text" #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion" class="form-control" required></textarea>
+    <textarea type="text" #descripcion="ngModel" name="descripcion" [(ngModel)]="producto.descripcion"
+        class="form-control" required></textarea>
 
     <label>Precio:
         <span *ngIf="!precio.valid && precio.touched" class="label label-warning">El precio no es correcto</span>
     </label>
-    <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required pattern="[0-9]+"/>
+    <input type="text" #precio="ngModel" name="precio" [(ngModel)]="producto.precio" class="form-control" required
+        pattern="[0-9]+" />
 
     <label>Imagen:</label>
-    <input type="file" class="form-control" (change)="fileChangeEvent($event)" />
+
+
+    <div *ngIf="is_edit">
+        <div *ngIf="!producto.imagen"><br>
+            <img src="http://192.168.100.20/curso-angular4-backend/uploads/default.jpg" style="width:200px;" />
+        </div>
+
+        <div *ngIf="producto.imagen">
+            <img src="http://192.168.100.20/curso-angular4-backend/uploads/{{producto.imagen}}" style="width:200px;" />
+        </div>
+    </div>
+
+    <div class="file-field">
+        <div class="btn btn-default btn-md float-left">
+            <span>Sube una imagen</span>
+            <input type="file" (change)="fileChangeEvent($event)" />
+        </div>
+    </div>
+
 
     <br>
-    <input type="submit" value="{{titulo}}" [disabled]="!formProducto.form.valid" class="btn btn-success">
+    <div style="display: flex;">
+        <div>
+            <input type="submit" value="{{titulo}}" [disabled]="!formProducto.form.valid" class="btn btn-success">
+        </div>
+        <div *ngIf="is_edit">
+            <input type="button" value="volver" class="btn btn-primary" [routerLink]="['/productos']">
+        </div>
+    </div>
+
 </form>

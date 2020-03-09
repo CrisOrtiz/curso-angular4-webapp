@@ -84,7 +84,7 @@
 }
 
 .producto_imagen{
-	max-height: 200px;
+	height: 200px;
 	margin: 0px auto;
 	display:block;
 	width: auto;
@@ -94,7 +94,7 @@
 }
 
 .imagen_relleno{
-	max-height: 200px;
+	height: 200px;
 	margin: 0px auto;
 	display:block;
 	width: auto;

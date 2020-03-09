@@ -19,6 +19,8 @@ export class ProductoAddComponent implements OnInit {
   public filesToUpload;
   public resultUpload;
 
+  public is_edit=false;
+
 
   constructor(
       private _productoService:ProductoService,
@@ -36,7 +38,7 @@ export class ProductoAddComponent implements OnInit {
   onSubmit(){
     console.log(this.producto);
 
-    if(this.filesToUpload.length >= 1){
+    if(this.filesToUpload && this.filesToUpload.length >= 1){
         this._productoService.makeFileRequest(GLOBAL.url+'upload-file', [], this.filesToUpload).then((result) => {
             console.log(result);
             this.resultUpload = result;
