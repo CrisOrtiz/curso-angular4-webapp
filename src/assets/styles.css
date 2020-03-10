@@ -110,3 +110,8 @@
 #producto_container{
 	text-align: center;
 }
+
+.seguro{
+	border-radius: 5px;
+	background: orange;
+}
