@@ -15,6 +15,8 @@ export class ProductoAddComponent implements OnInit {
 
   public titulo:string;
   public producto:Producto;
+
+  public host = GLOBAL.host;
   
   public filesToUpload;
   public resultUpload;

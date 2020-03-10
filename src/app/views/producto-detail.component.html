@@ -6,11 +6,11 @@
 <div *ngIf="producto">
 
     <div class="col-lg-2" *ngIf="!producto.imagen"><br>
-        <img src="http://192.168.100.20/curso-angular4-backend/uploads/default.jpg" class="producto_imagen" style="width:100%;" />
+        <img src="{{host}}/curso-angular4-backend/uploads/default.jpg" class="producto_imagen" style="width:100%;" />
     </div>
 
     <div class="col-lg-2" *ngIf="producto.imagen">
-        <img src="http://192.168.100.20/curso-angular4-backend//uploads/{{producto.imagen}}" class="producto_imagen"
+        <img src="{{host}}/curso-angular4-backend//uploads/{{producto.imagen}}" class="producto_imagen"
             style="width:100%;" />
     </div>
     <div class="col-lg-8">

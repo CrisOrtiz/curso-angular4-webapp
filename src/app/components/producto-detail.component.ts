@@ -13,6 +13,7 @@ import { Producto } from '../models/producto';
   export class ProductoDetailComponent implements OnInit {
   
     public producto:Producto;
+    public host=GLOBAL.host;
   
     constructor(
         private _productoService: ProductoService,

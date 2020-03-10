@@ -12,12 +12,12 @@
         <div ng *ngFor="let producto of productos" class="col-lg-3">
             <div class="thumbnail" id="producto_container">
                 <div *ngIf="producto.imagen" class="image_container">
-                    <img src="http://192.168.100.20/curso-angular4-backend/uploads/{{producto.imagen}}"
+                    <img src="{{host}}/curso-angular4-backend/uploads/{{producto.imagen}}"
                         class="producto_imagen" style="width:100%;" />
                 </div>
                 <div *ngIf="!producto.imagen">
                     <div class="imagen_relleno"><img
-                            src="http://192.168.100.20/curso-angular4-backend/uploads/default.jpg"
+                            src="{{host}}/curso-angular4-backend/uploads/default.jpg"
                             class="producto_imagen" style="width:100%;" /></div>
                 </div>
                 <div class="caption">
@@ -30,7 +30,7 @@
                         <a (click)="borrarConfirm(producto.id)" class="btn btn-md btn-danger">Borrar</a>
                     </div>
 
-                    <div class="seguro" *ngIf="confirmado == producto.id">
+                    <div class="seguro" *ngIf="confirmado == producto.id" style="border-radius:5px;background: goldenrod;">
                         <a (click)="onDeleteProducto(producto.id)" class="btn btn-md btn-danger">Si, borrar</a>
                         <a (click)="cancelarConfirm()" class="btn btn-md btn-primary">Cancelar</a>
                     </div>

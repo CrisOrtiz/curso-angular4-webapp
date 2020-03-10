@@ -1,3 +1,4 @@
+import { GLOBAL } from './../services/global';
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 import { ProductoService } from '../services/producto.service';
@@ -13,7 +14,8 @@ export class ProductosListComponent implements OnInit {
   public titulo: string;
   public productos: Producto[];
   public confirmado;
- 
+  public host=GLOBAL.host;
+  
 
   constructor(
     private _route: ActivatedRoute,
