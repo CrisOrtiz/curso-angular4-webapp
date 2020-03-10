@@ -45,7 +45,7 @@ export class ProductoService {
     }
 
     deleteProducto(id){
-        return this.getProducto(this.url + 'delete-producto/' + id);
+        return this._http.get(this.url+'delete-producto/'+id);
     }
 
     makeFileRequest(url: string, params: Array<string>, files: Array<File>) {

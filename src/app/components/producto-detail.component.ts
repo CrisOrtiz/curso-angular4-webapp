@@ -34,8 +34,6 @@ import { Producto } from '../models/producto';
 
             this._productoService.getProducto(id).subscribe(
                 response => {
-                  
-          
                   if((<any>response).code == 200){
                     this.producto = (<any>response).data;
                   }else{
